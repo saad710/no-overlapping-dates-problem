@@ -16,24 +16,25 @@ let events = [
   ];
 
   //sorting-events
-  let mainData = events?.sort(function (current, next) {
-    let currentStart = current?.startDate,
-      nextStart = next?.startDate
-    let currentEnd = current?.endDate,
-      nextEnd = next?.endDate
-    if (currentStart === nextStart) {
-      if (currentEnd < nextEnd) {
-        return -1
-      }
-      if (currentEnd > nextEnd) {
-        return 1
-      }
-    }
-    if (currentStart > nextStart) {
+ //sorting-events
+ let mainData = events?.sort(function (current, next) {
+  let currentStart = new Date(current?.startDate),
+    nextStart = new Date(next?.startDate)
+  let currentEnd = new Date(current?.endDate),
+    nextEnd = new Date(next?.endDate)
+  if (currentStart === nextStart) {
+    if (currentEnd < nextEnd) {
       return 1
     }
+    if (currentEnd > nextEnd) {
+      return -1
+    }
+  }
+  if (currentStart > nextStart) {
     return -1
-  })
+  }
+  return 1
+})
   console.log(mainData)
 //find-group-event
 let putEvent = []
