@@ -14,8 +14,7 @@ let events = [
     { startDate: '26-01-2022', endDate: '30-01-2022', id: '007' },
     { startDate: '15-01-2022', endDate: '16-01-2022', id: '102' },
   ];
-
-  //sorting-events
+  
  //sorting-events
  let mainData = events?.sort(function (current, next) {
   let currentStart = new Date(current?.startDate),
