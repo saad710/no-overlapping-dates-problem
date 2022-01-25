@@ -14,13 +14,13 @@ const App = () => {
     { startDate: '20-01-2022', endDate: '29-01-2022', id: '101' },
     { startDate: '18-01-2022', endDate: '18-01-2022', id: '009' },
     { startDate: '25-01-2022', endDate: '30-01-2022', id: '006' },
-    { startDate: '26-01-2022', endDate: '30-01-2022', id: '007' },
+    { startDate: '26-01-2024', endDate: '30-01-2022', id: '007' },
     { startDate: '15-01-2022', endDate: '16-01-2024', id: '102' },
   ];
   // console.log(moment('16-01-2022', "DD-MM-YYYY").isBefore(moment('17-01-2023', "DD-MM-YYYY")));
 
   //sorting-events
-  let mainData = events?.sort((current, next) => next.startDate > current.startDate ? -1 : 1)
+  let mainData = events?.sort((current, next) => moment(current.startDate, "DD-MM-YYYY").isBefore(moment(next.startDate, "DD-MM-YYYY")) ? -1 : 1)
   console.log(mainData)
 //find-group-event
   let putEvent = []
